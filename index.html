@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Développeur Web</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 100px 20px; }
+        header h1 { font-size: 3em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; opacity: 0.9; }
+        nav { background: #333; padding: 1rem; position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; padding: 1rem 2rem; transition: color 0.3s; }
+        nav a:hover { color: #667eea; }
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        #apropos { background: #f8f9fa; }
+        #projets { background: white; }
+        .projet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .projet-card { background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .projet-card:hover { transform: translateY(-10px); }
+        .projet-card img { width: 100%; height: 200px; object-fit: cover; }
+        .projet-card h3 { padding: 20px 20px 10px; color: #333; }
+        .projet-card p { padding: 0 20px 20px; color: #666; }
+        .btn { display: inline-block; background: #667eea; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 10px; transition: background 0.3s; }
+        .btn:hover { background: #5a67d8; }
+        #contact { background: #333; color: white; text-align: center; }
+        .contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-links a { color: white; font-size: 1.5em; transition: color 0.3s; }
+        .contact-links a:hover { color: #667eea; }
+        footer { background: #222; color: white; text-align: center; padding: 20px; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } nav ul { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="accueil">
+        <h1>John Doe</h1>
+        <p>Développeur Web Full Stack | Ouagadougou, Burkina Faso</p>
+        <a href="#projets" class="btn">Voir mes projets</a>
+    </header>
+
+    <section id="apropos">
+        <h2>À propos de moi</h2>
+        <p>Passionné par le développement web, je crée des applications modernes et performantes avec HTML, CSS, JavaScript, React et Node.js. Basé à Ouagadougou, je travaille sur des projets open-source et freelance.</p>
+        <p>Compétences : HTML5, CSS3, JavaScript (ES6+), React, Node.js, Git, responsive design.</p>
+    </section>
+
+    <section id="projets">
+        <h2>Mes projets</h2>
+        <div class="projet-grid">
+            <div class="projet-card">
+                <img src="https://via.placeholder.com/400x200/667eea/white?text=Projet+1" alt="Projet 1">
+                <h3>E-commerce React</h3>
+                <p>Site e-commerce complet avec panier, authentification et paiements Stripe. Déployé sur Vercel.</p>
+                <a href="https://github.com/votreusername/projet1" class="btn">GitHub</a>
+                <a href="https://projet1.vercel.app" class="btn">Démo Live</a>
+            </div>
+            <div class="projet-card">
+                <img src="https://via.placeholder.com/400x200/764ba2/white?text=Projet+2" alt="Projet 2">
+                <h3>API Node.js</h3>
+                <p>API RESTful avec MongoDB, authentification JWT et documentation Swagger.</p>
+                <a href="https://github.com/votreusername/api-node" class="btn">Code source</a>
+            </div>
+            <div class="projet-card">
+                <img src="https://via.placeholder.com/400x200/48bb78/white?text=Projet+3" alt="Projet 3">
+                <h3>Portfolio Statique</h3>
+                <p>Ce site ! Portfolio responsive réalisé avec HTML/CSS/JS pur et GitHub Pages.</p>
+                <a href="https://github.com/votreusername/votreusername.github.io" class="btn">Voir le code</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Envie de collaborer ? Écrivez-moi !</p>
+        <div class="contact-links">
+            <a href="https://github.com/votreusername" aria-label="GitHub">📂</a>
+            <a href="https://linkedin.com/in/votreusername" aria-label="LinkedIn">💼</a>
+            <a href="mailto:votreemail@example.com" aria-label="Email">✉️</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 John Doe. Fait avec ❤️ à Ouagadougou.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll pour la navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
